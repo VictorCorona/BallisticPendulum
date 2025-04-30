@@ -1,0 +1,118 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+\urlstyle{same}
+
+\title{The Ballistic Pendulum with Python Calculations}
+\author{Victor Corona}
+\date{April 2025}
+
+\begin{document}
+
+\maketitle
+
+\section{Preface}
+This document is meant to be used as a walk-through on using Python to complete the calculations of the ballistic pendulum lab from Pasco Scientific. This walk-through is intended for calculus based physics students to learn the basics of using python to do basic calculations. You can find an interactive version of this document on \href{https://trinket.io/courses/join/RVASYC}{trinket} and the source code for the final calculation on \href{https://github.com/VictorCorona/BallisticPendulum}{GitHub}. 
+
+
+\section{Introduction}
+The lab manual goes through the derivation to solve for the initial velocity of the ball hitting the ballistic pendulum. This page will take you through the steps to write your own python code to do this calculation.
+\hfill
+\begin{center}
+  $v=\frac{M}{m} \sqrt{2gR_{cm}(1-cos(\theta)}$  
+\end{center}
+
+\section{Variables in Python}
+Python used many different variable types, so I will only go over three that you will use the most.
+\begin{itemize}
+    \item \textbf{Integer:} This is the same as the math definition. \verb|int=5|
+    \item \textbf{Float:} A float is a number with a decimal or fraction. \verb|float=5.5|
+    \item \textbf{List:} A list is a list of numbers, this is good for imputing data from multiple trials of the same experiment. You must separate each number in the list with a comma. \verb|list=[1,2,3]|
+\end{itemize}
+
+Note that the list requires square brackets []. Parentheses () and brackets {} are different data types. 
+
+\section{Importing Libraries}
+Python is an open source programming language that is used in every discipline of science and automation. This means that every application of python has its own library that you can use to solve the specific problem you are working on. 
+
+One of the most important libraries to know how to use is the \textit{numpy} library. To import this (or any other) library, it is best to place the import library line at the beginning of your code.
+\\ \\
+\verb|import numpy|
+\\ \\
+You will then be able to call all functions in the numpy library \footnote{For more information on numpy visit \url{https://numpy.org}. For a list of numpy functions that the base trinket allows, visit \url{https://trinket.io/docs/python}}. 
+For example, to find the cosine of an angle, use the cosine function.
+\\ \\
+\verb|theta=numpy.pi|\\
+\verb|x=numpy.cos(theta)   #theta needs to be in radians|
+\\ \\
+It is also common to create a prefix for the library to shorten the name of libraries. 
+\\ \\ 
+\verb|import numpy as np|
+\\
+\verb|theta=np.pi|
+\\
+\verb|x=np.cos(theta) |
+\\ \\
+You can also import specific functions from the library if you are optimizing runtime or memory usage of your code.
+\\ \\
+\verb|from numpy import cos, pi|
+\\
+\verb|theta=pi|
+\\
+\verb|x=cos(theta)|
+
+\section{Calculations}
+Now that we have a function library, we can do basic calculations that you could typically do with a calculator. Just like a calculator, the order of operations will strictly follow PEMDAS so it is very important to keep that in mind when writing an equation. 
+
+For example, here is how you would write the quadratic formula:
+\\
+\begin{center}
+    $x=\frac{-b\pm \sqrt{b^2 -4ac}}{2a}$
+\end{center}
+\\ \\
+\verb|import numpy as np|
+\\
+\verb|x1=(-b + np.sqrt(b^2 - 4*a*c))/(2*a)|
+\\
+\verb|x2=(-b - np.sqrt(b^2 - 4*a*c))/(2*a)|
+\\
+
+Note that the quadratic formula has two solutions to it, python can only solve for one at a time. You need to set two different variables to get the two different solutions. 
+
+Also note that it is better to use parentheses more often than not when you want to make sure the code will follow the order of calculations you want it to. It is always better to use more parentheses than too few.  
+
+\section{Printing Results}
+To print the values of your calculation you should use the \textit{print} function.
+\\ \\
+\verb|print(x1)|
+\\
+\verb|print(x1)|
+\\
+
+You can also put more than one argument in the print function.
+\\ \\
+\verb|print('The plus solution is:',x1)|
+\\
+\verb|print('The minus solution is:',x2)|
+\\
+
+\section{Try it Yourself}
+You should have all the tools you need to calculate the velocity from the equation from the beginning. You should know that there is more than one way to get the same result, just like with solving physics problems. Here is an outline of steps to take to write the code below.
+\begin{itemize}
+    \item Import numpy library.
+    \item Declare the mass and radius variables (table 8.1).
+    \item Create a list of $(\theta)$ values (table 8.1).
+    \item Write an equation to find the mean of the angles.
+    \item Write an equation to calculate velocity.
+    \item Print your results.
+\end{itemize}
+
+\end{document}
