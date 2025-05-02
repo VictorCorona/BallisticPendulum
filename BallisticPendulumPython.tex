@@ -5,9 +5,7 @@
     colorlinks=true,
     linkcolor=blue,
     filecolor=magenta,      
-    urlcolor=cyan,
-    pdftitle={Overleaf Example},
-    pdfpagemode=FullScreen,
+    urlcolor=blue,
     }
 \urlstyle{same}
 
@@ -20,22 +18,22 @@
 \maketitle
 
 \section{Preface}
-This document is meant to be used as a walk-through on using Python to complete the calculations of the ballistic pendulum lab from Pasco Scientific. This walk-through is intended for calculus based physics students to learn the basics of using python to do basic calculations. You can find an interactive version of this document on \href{https://trinket.io/courses/join/RVASYC}{trinket} and the source code for the final calculation on \href{https://github.com/VictorCorona/BallisticPendulum}{GitHub}. 
+This document is meant to be used as a walk-through on using Python to complete the calculations of the ballistic pendulum experiment from Pasco Scientific. This walk-through is intended for calculus-based physics students to learn the basics of using Python to do basic calculations. You can find an interactive version of this document on \href{https://trinket.io/courses/join/RVASYC}{trinket} and the source code for the final calculation on \href{https://github.com/VictorCorona/BallisticPendulum}{GitHub}. 
 
 
 \section{Introduction}
-The lab manual goes through the derivation to solve for the initial velocity of the ball hitting the ballistic pendulum. This page will take you through the steps to write your own python code to do this calculation.
+The experiment instructions go through the derivation to solve for the initial velocity of the ball hitting the ballistic pendulum. This page will take you through the steps to write your own python code to do this calculation.
 \hfill
 \begin{center}
   $v=\frac{M}{m} \sqrt{2gR_{cm}(1-cos(\theta)}$  
 \end{center}
 
 \section{Variables in Python}
-Python used many different variable types, so I will only go over three that you will use the most.
+Python uses many different variable types; here is a brief explanation of three of them that you will use the most.
 \begin{itemize}
     \item \textbf{Integer:} This is the same as the math definition. \verb|int=5|
     \item \textbf{Float:} A float is a number with a decimal or fraction. \verb|float=5.5|
-    \item \textbf{List:} A list is a list of numbers, this is good for imputing data from multiple trials of the same experiment. You must separate each number in the list with a comma. \verb|list=[1,2,3]|
+    \item \textbf{List:} A list is a list of numbers, this is good for inputting data from multiple trials of the same experiment. You must separate each number in the list with a comma. \verb|list=[1,2,3]|
 \end{itemize}
 
 Note that the list requires square brackets []. Parentheses () and brackets {} are different data types. 
